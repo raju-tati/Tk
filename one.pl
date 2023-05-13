@@ -6,8 +6,12 @@ sub main() {
     use Tk;
     
     my $mainWindow = MainWindow->new();
-    $mainWindow->geometry("1300x700");
     $mainWindow->title("Tk Window");
+
+    my $screenWidth = $mainWindow->screenwidth;
+    my $screenHeight = $mainWindow->screenheight;
+    my $screenResolution = join("x", $screenWidth, $screenHeight);
+    $mainWindow->geometry($screenResolution);
     
     MainLoop;
 }
